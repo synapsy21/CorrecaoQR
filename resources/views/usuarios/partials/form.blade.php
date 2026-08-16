@@ -1,0 +1,5 @@
+<div class="mb-3"><label class="form-label fw-semibold">Nome</label><input name="name" class="form-control" value="{{ old('name', $usuario->name) }}" required></div>
+<div class="mb-3"><label class="form-label fw-semibold">E-mail</label><input type="email" name="email" class="form-control" value="{{ old('email', $usuario->email) }}" required></div>
+<div class="mb-3"><label class="form-label fw-semibold">Perfil</label><select name="role" class="form-select" required><option value="professor" {{ old('role', $usuario->role) === 'professor' ? 'selected' : '' }}>Professor</option><option value="admin" {{ old('role', $usuario->role) === 'admin' ? 'selected' : '' }}>Administrador</option></select></div>
+<div class="mb-3"><label class="form-label fw-semibold">Senha {{ $usuario->exists ? '(deixe em branco para manter)' : '' }}</label><input type="password" name="password" class="form-control" {{ $usuario->exists ? '' : 'required' }} minlength="6"></div>
+<div class="mb-4"><label class="form-label fw-semibold">Confirmar senha</label><input type="password" name="password_confirmation" class="form-control" {{ $usuario->exists ? '' : 'required' }} minlength="6"></div>
